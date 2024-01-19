@@ -4068,19 +4068,71 @@ img {
   }
 }
 
+
+
 .static-hero .static-hero-right .icon-1,
 .static-hero .static-hero-right .icon-2,
 .static-hero .static-hero-right .icon-3,
 .static-hero .static-hero-right .icon-4 {
   position: absolute;
   left: 0;
-  top: 20%;
+  top: 0%;
   width: 110px;
   height: 110px;
   padding: 20px;
   background: #fff;
   border-radius: 25px;
+
 }
+
+.static-hero .static-hero-right .icon-1,
+.static-hero .static-hero-right .icon-2 {
+  opacity: 0;
+  /* Set initial opacity to 0 for fade-in effect */
+  animation: iconFadeIn 2s ease-in-out;
+  /* Use ease-in-out for a smoother transition */
+  animation-fill-mode: forwards;
+  /* Keeps the final state of the animation after it completes */
+  animation-delay: 0.5s;
+  /* Adjust the delay as needed */
+}
+
+
+.static-hero .static-hero-right .icon-3,
+.static-hero .static-hero-right .icon-4 {
+  opacity: 0;
+  /* Set initial opacity to 0 for fade-in effect */
+  animation: iconFadeIn2 2s ease-in-out;
+  /* Use ease-in-out for a smoother transition */
+  animation-fill-mode: forwards;
+  /* Keeps the final state of the animation after it completes */
+  animation-delay: 0.5s;
+  /* Adjust the delay as needed */
+}
+@keyframes iconFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes iconFadeIn2 {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 .static-hero .static-hero-right .icon-1 img,
 .static-hero .static-hero-right .icon-2 img,
@@ -9430,7 +9482,7 @@ input[type=email] {
 
 #loading-indicator {
   display: none;
-  
+
 }
 
 
@@ -9450,6 +9502,6 @@ input[type=email] {
   z-index: 100;
 }
 
-.my-float{
-	margin-top:9px;
+.my-float {
+  margin-top: 9px;
 }
