@@ -4082,6 +4082,7 @@ img {
   padding: 20px;
   background: #fff;
   border-radius: 25px;
+  
 
 }
 
@@ -4094,6 +4095,7 @@ img {
   animation-fill-mode: forwards;
   /* Keeps the final state of the animation after it completes */
   animation-delay: 0.5s;
+
   /* Adjust the delay as needed */
 }
 
@@ -4108,6 +4110,7 @@ img {
   /* Keeps the final state of the animation after it completes */
   animation-delay: 0.5s;
   /* Adjust the delay as needed */
+
 }
 @keyframes iconFadeIn {
   0% {
@@ -9504,4 +9507,81 @@ input[type=email] {
 
 .my-float {
   margin-top: 9px;
+}
+
+
+
+.wpo-about-funfact .grid-inner {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.wpo-about-funfact .grid-inner.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.wpo-work-wrap .animate-left,
+.wpo-work-wrap .animate-top,
+.wpo-work-wrap .animate-right {
+    opacity: 0;
+    transform: translateY(20px); /* Adjust this value based on your design */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.wpo-work-wrap .animate-left.animate,
+.wpo-work-wrap .animate-top.animate,
+.wpo-work-wrap .animate-right.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Animation for the first column (from left) */
+.wpo-work-wrap .animate-left {
+    animation: fadeInLeft 1s ease-out;
+}
+
+/* Animation for the second column (from top) */
+.wpo-work-wrap .animate-top {
+    animation: fadeInTop 1s ease-out;
+}
+
+/* Animation for the third column (from right) */
+.wpo-work-wrap .animate-right {
+    animation: fadeInRight 1s ease-out;
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInTop {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }

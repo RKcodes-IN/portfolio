@@ -797,3 +797,111 @@ $('#days').text(experience.days);
 $('#years1').text(experience.years);
 $('#months1').text(experience.months);
 $('#days1').text(experience.days);
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    // Function to check if an element is in the viewport
+    function isElementInViewport(el) {
+    console.log('dsadas');
+
+      var rect = el.getBoundingClientRect();
+      return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+      );
+    }
+
+    // Function to handle the animation
+    function handleScrollAnimation() {
+      var elements = document.querySelectorAll('.static-hero-right [class^="icon-"]');
+      
+      elements.forEach(function (element) {
+        if (isElementInViewport(element)) {
+          element.classList.add('animate');
+        }
+      });
+    }
+
+    // Create an Intersection Observer
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-viewport');
+        } else {
+          entry.target.classList.remove('in-viewport');
+        }
+      });
+    });
+
+    // Observe the elements
+    var elementsToObserve = document.querySelectorAll('.static-hero-right [class^="icon-"]');
+    elementsToObserve.forEach(function (element) {
+      observer.observe(element);
+    });
+
+    // Listen for scroll events and trigger the animation
+    window.addEventListener('scroll', function () {
+      handleScrollAnimation();
+    });
+
+    // Trigger the animation for initially visible elements
+    handleScrollAnimation();
+  });
+
+
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const grids = document.querySelectorAll(".wpo-about-funfact .grid-inner");
+
+    function isInViewport(element) {
+        const rect = element.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+        );
+    }
+
+    function addAnimationClass() {
+        grids.forEach((grid) => {
+            if (isInViewport(grid)) {
+                grid.classList.add("animate");
+            }
+        });
+    }
+
+    // Initial check in case elements are already in the viewport on page load
+    addAnimationClass();
+
+    // Attach scroll event listener
+    document.addEventListener("scroll", addAnimationClass);
+});
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const columns = document.querySelectorAll(".wpo-work-wrap .animate-left, .wpo-work-wrap .animate-top, .wpo-work-wrap .animate-right");
+
+    function isInViewport(element) {
+        const rect = element.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+        );
+    }
+
+    function addAnimationClass() {
+        columns.forEach((column) => {
+            if (isInViewport(column)) {
+                column.classList.add("animate");
+            }
+        });
+    }
+
+    // Initial check in case elements are already in the viewport on page load
+    addAnimationClass();
+
+    // Attach scroll event listener
+    document.addEventListener("scroll", addAnimationClass);
+});

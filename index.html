@@ -479,7 +479,7 @@
                 </div>
                 <div class="wpo-work-wrap">
                     <div class="row">
-                        <div class="col-lg-4 col-md-6 col-12">
+                        <div class="col-lg-4 col-md-6 col-12 animate-left">
                             <div class="wpo-work-item">
                                 <ul>
                                     <li class="date">Mar. 2019 - Aug. 2019</li>
@@ -490,7 +490,7 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-6 col-12">
+                        <div class="col-lg-4 col-md-6 col-12 animate-top">
                             <div class="wpo-work-item">
                                 <ul>
                                     <li class="date">Sep. 2019 - Mar. 2022</li>
@@ -501,7 +501,7 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-6 col-12">
+                        <div class="col-lg-4 col-md-6 col-12 animate-right">
                             <div class="wpo-work-item">
                                 <ul>
                                     <li class="date">April. 2022 - <span>Present</span></li>
@@ -1096,36 +1096,4 @@
     }
 
     form.addEventListener("submit", handleSubmit);
-</script>
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        // Select the elements you want to animate
-        var iconElements = document.querySelectorAll('.static-hero .static-hero-right .icon-3, .static-hero .static-hero-right .icon-4');
-
-        // Function to check if an element is in the viewport
-        function isInViewport(element) {
-            var rect = element.getBoundingClientRect();
-            return (
-                rect.top >= 0 &&
-                rect.left >= 0 &&
-                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-            );
-        }
-
-        // Function to handle scroll events
-        function handleScroll() {
-            iconElements.forEach(function (iconElement) {
-                if (isInViewport(iconElement) && !iconElement.classList.contains('animated')) {
-                    iconElement.classList.add('animated');
-                }
-            });
-        }
-
-        // Attach the handleScroll function to the scroll event
-        window.addEventListener('scroll', handleScroll);
-
-        // Trigger the handleScroll function once to check initial state
-        handleScroll();
-    });
 </script>
